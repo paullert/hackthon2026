@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f8fc;
+    color: #1f2937;
+}
+
+.hero {
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    color: white;
+    padding: 48px 20px;
+}
+
+.hero-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mini-title {
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.hero h1 {
+    margin: 0 0 12px;
+    font-size: 3rem;
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+}
+
+.filter-box {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+}
+
+.filter-box h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #1d4ed8;
+}
+
+.helper-text {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #6b7280;
+}
+
+.quick-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.quick-btn {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quick-btn.active {
+    background: #1d4ed8;
+    color: white;
+}
+
+.filters-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #374151;
+}
+
+.filter-group select,
+.clear-btn {
+    height: 44px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 0 12px;
+    font-size: 16px;
+}
+
+.clear-btn {
+    background: #111827;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.results-count {
+    margin-top: 16px;
+    font-weight: bold;
+    color: #1d4ed8;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-top: 6px solid #2563eb;
+}
+
+.card-top {
+    margin-bottom: 12px;
+}
+
+.card-badge {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 999px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.badge-food {
+    background: #16a34a;
+}
+
+.badge-shelter {
+    background: #ea580c;
+}
+
+.badge-campus-help {
+    background: #2563eb;
+}
+
+.badge-donations {
+    background: #7c3aed;
+}
+
+.resource-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.address {
+    font-weight: bold;
+    color: #4b5563;
+    margin-bottom: 10px;
+}
+
+.resource-card p {
+    margin-top: 0;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .filters-row {
+        grid-template-columns: 1fr;
+    }
+}
