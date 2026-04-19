@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HelpHub</title>
     <style>
+        .navbar {
+            width: 100%;
+            background: #111827;
+            padding: 12px 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+        
         * {
             box-sizing: border-box;
         }
@@ -237,6 +255,11 @@
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About Us</a>
+    </div>
+
     <header class="hero">
         <div class="hero-inner">
             <p class="mini-title">Community Resource Finder</p>

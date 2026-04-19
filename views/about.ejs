@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Community Help Exchange</title>
+    <title>About Us | HelpHub</title>
     <style>
+        .navbar {
+            width: 100%;
+            background: #111827;
+            padding: 12px 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -92,18 +110,21 @@
         }
 
         .photo-box {
-            background: #e0f2fe;
-            border: 2px dashed #38bdf8;
-            border-radius: 16px;
-            min-height: 260px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 18px;
-            color: #0369a1;
-            font-weight: bold;
+        width: 100%;
+        height: 350px;   /* controls size */
+        border-radius: 16px;
+        overflow: hidden;
+        padding: 0;      /* remove spacing */
+        border: none;    /* remove dashed border */
+        background: none;
         }
+
+        .photo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    d   isplay: block;
+}
 
         .team-grid {
             display: grid;
@@ -149,12 +170,17 @@
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About Us</a>
+    </div>
+
     <header class="hero">
         <div class="hero-inner">
             <p class="mini-title">Meet the Team</p>
             <h1>About Us</h1>
             <p class="subtitle">
-                Learn more about our team, our project, and why we created Community Help Exchange.
+                Learn more about our team, our project, and why we created HelpHub.
             </p>
 
             <div class="nav-row">
@@ -183,42 +209,40 @@
                 </div>
 
                 <div class="photo-box">
-                    Add your team photo here
-                    <br><br>
-                    Replace this box with a real image later
-                </div>
-            </div>
+                    <div>
+                        <img src="/images/image.png" alt="Team Photo">
+                    </div>
         </section>
 
         <section class="section-card">
             <h2>Our Team</h2>
             <div class="team-grid">
                 <div class="member-card">
-                    <h3>Your Name</h3>
-                    <p>Describe your role here. For example: design, coding, research, or presentation.</p>
+                    <h3>Paul Conner</h3>
+                    <p>Project Lead: Back end coding.</p>
                 </div>
 
                 <div class="member-card">
-                    <h3>Teammate Name</h3>
-                    <p>Describe what this teammate contributed to the web app and project idea.</p>
+                    <h3>Jennifer Mejia</h3>
+                    <p>Data Abstractor: Gathered all information as needed.</p>
                 </div>
 
                 <div class="member-card">
-                    <h3>Teammate Name</h3>
-                    <p>Describe their role and what they helped create for the website.</p>
+                    <h3>Benjamin Loeffler</h3>
+                    <p>UI Designer: Designed the layout, colors, buttons, etc.</p>
                 </div>
 
                 <div class="member-card">
-                    <h3>Teammate Name</h3>
-                    <p>Add another teammate here if needed, along with their contribution.</p>
+                    <h3>Joseph Lustre</h3>
+                    <p>UI Designer: Designed the layout, colors, buttons, etc.</p>
                 </div>
             </div>
         </section>
 
         <section class="section-card">
-            <h2>Why We Created This Website</h2>
+            <h2>Why We Created HelpHub</h2>
             <p>
-                We created Community Help Exchange because finding help should not feel confusing
+                We created HelpHub because finding help should not feel confusing
                 or overwhelming. We wanted to make a website that is simple, clear, and practical
                 so users can quickly find resources without wasting time.
             </p>
