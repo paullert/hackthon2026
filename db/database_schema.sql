@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS places;
 create table places (
     place_id SERIAL PRIMARY KEY,
-    name VARCHAR(40),
+    name text,
     city VARCHAR(30),
     google_place_id text,
     type VARCHAR(20),
@@ -11,6 +11,8 @@ create table places (
     time_start TIMESTAMP,
     time_end TIMESTAMP
 );
+
+drop table if exists resources;
 create table resources(
     resource_id SERIAL PRIMARY KEY,
     name VARCHAR(50),
@@ -28,6 +30,7 @@ create table place_items (
     item varchar(20)
 );
 
+Drop table if exists place_schedules;
 create table place_schedules (
     schedule_id serial primary key,
     place_id int references places(place_id),
