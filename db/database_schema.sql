@@ -1,4 +1,3 @@
--- POSTGRES SQL V17.8
 DROP TABLE IF EXISTS places;
 create table places (
     place_id SERIAL PRIMARY KEY,
@@ -7,9 +6,19 @@ create table places (
     google_place_id text,
     type VARCHAR(20),
     address VARCHAR(60),
+    website text,
     image_url text,
     time_start TIMESTAMP,
     time_end TIMESTAMP
+);
+create table resources(
+    resource_id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    description text,
+    contact_info text,
+    email text,
+    phone text,
+    website text
 );
 
 DROP TABLE IF EXISTS place_items;
