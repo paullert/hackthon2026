@@ -134,6 +134,37 @@ body {
     font-size: 16px;
 }
 
+.filter-group input[type="text"],
+.filter-group select {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    color: #1f2937;
+    font-size: 16px;
+    line-height: 1.2;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.filter-group input[type="text"]::placeholder {
+    color: #9ca3af;
+}
+
+.filter-group input[type="text"]:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.filter-group input[type="text"]:hover,
+.filter-group select:hover {
+    border-color: #9ca3af;
+}
+
 .clear-btn {
     background: #111827;
     color: white;
@@ -178,12 +209,28 @@ body {
     padding: 7px 12px;
     font-size: 0.8rem;
     font-weight: 800;
+    background: yellow;
 }
 
-.badge-food { background: #16a34a; }
-.badge-shelter { background: #ea580c; }
-.badge-campus-help { background: #2563eb; }
-.badge-donations { background: #7c3aed; }
+.badge-food-bank {
+    background: #16a34a;
+}
+
+.badge-shelter {
+    background: #ea580c;
+}
+
+.badge-campus-help {
+    background: #2563eb;
+}
+
+.badge-donation-center {
+    background: #7c3aed;
+}
+
+.badge-recycling-center {
+    background: #8b2c9a;
+}
 
 .resource-card h3 {
     margin-top: 0;

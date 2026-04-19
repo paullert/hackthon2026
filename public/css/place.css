@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1f2937;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.page-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.place-detail-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.place-image-wrap {
+    width: 100%;
+    background: #e5e7eb;
+}
+
+.place-image {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+.place-detail-content {
+    padding: 1.5rem;
+}
+
+.place-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.place-detail-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #111827;
+}
+
+.place-meta {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #374151;
+}
+
+.place-section {
+    margin-top: 2rem;
+}
+
+.place-section h2 {
+    margin: 0 0 0.9rem 0;
+    font-size: 1.25rem;
+    color: #111827;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.item-list {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.item-list li {
+    margin-bottom: 0.45rem;
+    color: #374151;
+}
+
+.schedule-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.schedule-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.85rem;
+    padding: 1rem;
+}
+
+.schedule-card p {
+    margin: 0.35rem 0;
+    color: #374151;
+}
+
+.place-actions {
+    margin-top: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 0.7rem 1rem;
+    border-radius: 0.75rem;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background: #1d4ed8;
+    text-decoration: none;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: #6b7280;
+}
+
+.badge-food {
+    background: #16a34a;
+}
+
+.badge-shelter {
+    background: #ea580c;
+}
+
+.badge-campus-help {
+    background: #2563eb;
+}
+
+.badge-donations {
+    background: #7c3aed;
+}
+
+.badge-misc {
+    background: #6b7280;
+}
+
+@media (max-width: 700px) {
+    .page-wrap {
+        padding: 1rem;
+    }
+
+    .place-detail-content {
+        padding: 1rem;
+    }
+
+    .place-detail-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .place-image {
+        max-height: 240px;
+    }
+}

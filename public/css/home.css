@@ -1,0 +1,19 @@
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body form {
+    margin-top: auto;
+}

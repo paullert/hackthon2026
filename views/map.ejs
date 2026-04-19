@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('partials/head')%>
+    <link rel="stylesheet" href="/css/map.css">
+</head>
+<body>
+<header>
+    <%- include('partials/navbar') %>
+</header>
+
+<div class="page-wrap">
+    <h1>Resource Map</h1>
+    <div id="map" class="map"></div>
+</div>
+
+<script>
+    const places = <%- JSON.stringify(places) %>;
+    console.log("places:", places);
+
+    function markerColor(type) {
+        const value = (type || "").trim().toLowerCase();
+
+        if (value === "food bank") return "#16a34a";
+        if (value === "shelter") return "#ea580c";
+        if (value === "recycling center") return "#8b2c9a";
+        if (value === "donation center") return "#7c3aed";
+        return "#6b7280";
+    }
+
+    async function initMap() {
+        const { Map, InfoWindow } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+
+        const defaultCenter = places.length
+            ? {
+                lat: Number(places[0].latitude),
+                lng: Number(places[0].longitude)
+            }
+            : { lat: 36.6002, lng: -121.8947 };
+
+        const map = new Map(document.getElementById("map"), {
+            center: defaultCenter,
+            zoom: places.length ? 11 : 9,
+            mapId: "DEMO_MAP_ID"
+        });
+
+        const infoWindow = new InfoWindow();
+        const bounds = new google.maps.LatLngBounds();
+
+        places.forEach((place) => {
+            if (place.latitude == null || place.longitude == null) return;
+
+            const position = {
+                lat: Number(place.latitude),
+                lng: Number(place.longitude)
+            };
+
+            const pin = new PinElement({
+                background: markerColor(place.type),
+                borderColor: "#ffffff",
+                glyphColor: "#ffffff",
+                glyphText: ""
+            });
+
+            const marker = new AdvancedMarkerElement({
+                map,
+                position,
+                title: place.name,
+                gmpClickable: true
+            });
+
+            marker.append(pin);
+
+            marker.addEventListener("gmp-click", () => {
+                infoWindow.setContent(`
+                    <div style="max-width:220px;">
+                        <h3 style="margin:0 0 8px 0;">${place.name}</h3>
+                        <p style="margin:0 0 6px 0;"><strong>Type:</strong> ${place.type || "Misc"}</p>
+                        <p style="margin:0;">${place.address || ""}${place.address && place.city ? ", " : ""}${place.city || ""}</p>
+                        <p style="margin:10px 0 0 0;">
+                            <a href="/place/${place.place_id}">View details</a>
+                        </p>
+                    </div>
+                `);
+
+                infoWindow.open({
+                    map,
+                    anchor: marker
+                });
+            });
+
+            bounds.extend(position);
+        });
+
+        if (places.length > 1) {
+            map.fitBounds(bounds);
+        }
+    }
+
+    window.initMap = initMap;
+</script>
+
+<script
+        async
+        src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapsApiKey %>&loading=async&callback=initMap">
+</script>
+</body>
+</html>

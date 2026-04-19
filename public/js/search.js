@@ -6,23 +6,51 @@ document.addEventListener("DOMContentLoaded", function () {
     const quickBtns = document.querySelectorAll(".quick-btn");
     const clearBtn = document.getElementById("clearFilters");
 
+    function normalize(value) {
+        return (value || "")
+            .toString()
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, "-");
+    }
+
+    function parseItems(value) {
+        return (value || "")
+            .split(",")
+            .map(item => normalize(item))
+            .filter(Boolean);
+    }
+
     function updateCount() {
         let visible = 0;
+
         cards.forEach((card) => {
             if (card.style.display !== "none") {
                 visible++;
             }
         });
+
         resultsCount.textContent = `Showing ${visible} resource${visible === 1 ? "" : "s"}`;
     }
 
+    function setActiveQuickButton(value) {
+        const normalizedValue = normalize(value);
+
+        quickBtns.forEach((btn) => {
+            btn.classList.toggle(
+                "active",
+                normalize(btn.dataset.category) === normalizedValue
+            );
+        });
+    }
+
     function filterCards() {
-        const selectedCategory = categoryFilter.value;
-        const selectedItem = itemFilter.value;
+        const selectedCategory = normalize(categoryFilter.value || "all");
+        const selectedItem = normalize(itemFilter.value || "all");
 
         cards.forEach((card) => {
-            const category = card.dataset.category;
-            const items = card.dataset.items.split(",");
+            const category = normalize(card.dataset.category);
+            const items = parseItems(card.dataset.items);
 
             const categoryMatch =
                 selectedCategory === "all" || category === selectedCategory;
@@ -30,11 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemMatch =
                 selectedItem === "all" || items.includes(selectedItem);
 
-            if (categoryMatch && itemMatch) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
+            card.style.display = categoryMatch && itemMatch ? "block" : "none";
         });
 
         updateCount();
@@ -42,25 +66,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     quickBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
-            const value = this.dataset.category;
+            const value = normalize(this.dataset.category || "all");
             categoryFilter.value = value;
-
-            quickBtns.forEach((b) => b.classList.remove("active"));
-            this.classList.add("active");
-
+            setActiveQuickButton(value);
             filterCards();
         });
     });
 
     categoryFilter.addEventListener("change", function () {
-        quickBtns.forEach((b) => {
-            if (b.dataset.category === categoryFilter.value) {
-                b.classList.add("active");
-            } else {
-                b.classList.remove("active");
-            }
-        });
-
+        setActiveQuickButton(categoryFilter.value);
         filterCards();
     });
 
@@ -69,12 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
     clearBtn.addEventListener("click", function () {
         categoryFilter.value = "all";
         itemFilter.value = "all";
-
-        quickBtns.forEach((b) => b.classList.remove("active"));
-        document.querySelector('[data-category="all"]').classList.add("active");
-
+        setActiveQuickButton("all");
         filterCards();
     });
 
+    setActiveQuickButton(categoryFilter.value || "all");
     filterCards();
 });

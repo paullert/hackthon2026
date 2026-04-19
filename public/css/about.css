@@ -85,17 +85,20 @@ body {
 }
 
 .photo-box {
-    background: #e0f2fe;
-    border: 2px dashed #38bdf8;
+    width: 100%;
+    height: 350px;   /* controls size */
     border-radius: 16px;
-    min-height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 18px;
-    color: #0369a1;
-    font-weight: bold;
+    overflow: hidden;
+    padding: 0;      /* remove spacing */
+    border: none;    /* remove dashed border */
+    background: none;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .team-grid {

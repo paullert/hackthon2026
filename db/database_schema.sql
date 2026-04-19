@@ -2,20 +2,20 @@ DROP TABLE IF EXISTS places;
 create table places (
     place_id SERIAL PRIMARY KEY,
     name text,
-    city VARCHAR(30),
-    google_place_id text,
-    type VARCHAR(20),
-    address VARCHAR(60),
+    city text,
+    description text,
+    type text,
+    address text,
     website text,
     image_url text,
-    time_start TIMESTAMP,
-    time_end TIMESTAMP
+    latitude double precision,
+    longitude double precision
 );
 
 drop table if exists resources;
 create table resources(
     resource_id SERIAL PRIMARY KEY,
-    name VARCHAR(50),
+    name text,
     description text,
     contact_info text,
     email text,
