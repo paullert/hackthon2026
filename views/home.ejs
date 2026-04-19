@@ -1,12 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <%- include('partials/head')%>
 </head>
 <body>
-    <h1>HelpHub</h1>
-    <a href="/search">Go to App</a>
+
+
+<style>
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .card-body form {
+        margin-top: auto;
+    }
+</style>
+
+<div class="container d-flex justify-content-center">
+    <div class="row row-cols-3 g-4" style="max-width: 900px;">
+
+        <!-- Card 1 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="/public/images/strawberry.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Fresh Food</h5>
+                    <p class="card-text">Food insecurity affects 34% of residents, 66% of farmworkers, and 33% of children.</p>
+                    <form action = "/search">
+                        <a href="#" class="btn btn-primary mt-auto">Go</a>
+                        <input type = hidden name = "item" value = "Fresh-Food">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="public/images/recycle.jpeg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Recycling</h5>
+                    <p class="card-text">Monterey consistently ranks among California communities with notably high recycling and composting rates for its size.</p>
+                    <form action = "/search">
+                        <a href="#" class="btn btn-primary mt-auto">Go</a>
+                        <input type = hidden name = "item" value = "Recycle">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="/public/images/mont.png" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Monterey</h5>
+                    <p class="card-text">The Monterey County region is one of the most productive agricultural areas in the United States, often called “America’s Salad Bowl” because it grows a large share of the nation’s lettuce, strawberries, and other fresh produce.</p>
+                    <form action = "https://en.wikipedia.org/wiki/Monterey,_California">
+                        <a href="#" class="btn btn-primary mt-auto">Go</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="/public/images/bed.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Shelter</h5>
+                    <p class="card-text">Monterey County has more homeless students than San Francisco and San Jose combined.</p>
+                    <form action = "/search">
+                        <a href="#" class="btn btn-primary mt-auto">Go</a>
+                        <input type = hidden name = "item" value = "Shelter">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="/public/images/Can.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Canned Food</h5>
+                    <p class="card-text">Canned food can last for years without spoiling, making it one of the most reliable ways to store and distribute food during shortages or emergencies.</p>
+                    <form action = "/search">
+                        <a href="#" class="btn btn-primary mt-auto">Go</a>
+                        <input type = hidden name = "item" value = "Can">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="/public/images/CSUMB.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">College Resources</h5>
+                    <p class="card-text">41% of CSUMB students face food insecurity.</p>
+                    <form action = "/search">
+                        <a href="#" class="btn btn-primary mt-auto">Go</a>
+                        <input type = hidden name = "item" value = "School">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</div>
 </body>
 </html>
