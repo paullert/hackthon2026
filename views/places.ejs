@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('partials/head')%>
+</head>
+<body>
+<h1>Example Places Page</h1>
+<ul>
+    <% for (let row of places) { %>
+        <li>
+            <%= row.name %>
+        </li>
+    <% } %>
+
+</ul>
+</body>
+</html>
