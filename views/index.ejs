@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Help Exchange</title>
+    <title>HelpHub</title>
     <style>
         * {
             box-sizing: border-box;
@@ -19,7 +19,7 @@
         .hero {
             background: linear-gradient(135deg, #2563eb, #38bdf8);
             color: white;
-            padding: 50px 20px;
+            padding: 56px 20px;
         }
 
         .hero-inner {
@@ -43,6 +43,30 @@
             margin: 0;
             font-size: 1.1rem;
             max-width: 700px;
+            line-height: 1.5;
+        }
+
+        .hero-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background: white;
+            color: #1d4ed8;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero-btn.secondary {
+            background: rgba(255,255,255,0.18);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.45);
         }
 
         .page {
@@ -133,49 +157,44 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 22px;
         }
 
         .resource-card {
             background: white;
-            border-radius: 18px;
-            padding: 20px;
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+            border-radius: 22px;
+            padding: 22px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
             border-top: 6px solid #2563eb;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 34px rgba(0,0,0,0.12);
         }
 
         .card-top {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .card-badge {
-            display: inline-block;
-            padding: 7px 12px;
-            border-radius: 999px;
             color: white;
+            border-radius: 999px;
+            padding: 7px 12px;
             font-size: 0.8rem;
-            font-weight: bold;
+            font-weight: 800;
         }
 
-        .badge-food {
-            background: #16a34a;
-        }
-
-        .badge-shelter {
-            background: #ea580c;
-        }
-
-        .badge-campus-help {
-            background: #2563eb;
-        }
-
-        .badge-donations {
-            background: #7c3aed;
-        }
+        .badge-food { background: #16a34a; }
+        .badge-shelter { background: #ea580c; }
+        .badge-campus-help { background: #2563eb; }
+        .badge-donations { background: #7c3aed; }
 
         .resource-card h3 {
-            margin: 0 0 10px;
+            margin-top: 0;
+            margin-bottom: 10px;
         }
 
         .address {
@@ -188,6 +207,22 @@
             margin-top: 0;
             line-height: 1.5;
             color: #4b5563;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .map-btn:hover {
+            background: #1d4ed8;
         }
 
         @media (max-width: 768px) {
@@ -205,13 +240,18 @@
     <header class="hero">
         <div class="hero-inner">
             <p class="mini-title">Community Resource Finder</p>
-            <h1>Community Help Exchange</h1>
+            <h1>HelpHub</h1>
             <p class="subtitle">Find local food, shelter, campus help, and donation resources near CSUMB.</p>
+
+            <div class="hero-buttons">
+                <a href="#resources" class="hero-btn">Find Resources</a>
+                <a href="/about" class="hero-btn secondary">About Us</a>
+            </div>
         </div>
     </header>
 
     <main class="page">
-        <section class="filter-box">
+        <section id="resources" class="filter-box">
             <h2>Find Help Fast</h2>
             <p class="helper-text">Choose a category or item to quickly narrow down the list.</p>
 
@@ -267,6 +307,7 @@
                 <h3>CSUMB OtterCare / The Hub</h3>
                 <p class="address">100 Campus Center, Seaside, CA</p>
                 <p>Basic needs support for students, including food, hygiene, and emergency help.</p>
+                <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=100+Campus+Center+Seaside+CA">Open in Maps</a>
             </div>
 
             <div class="resource-card" data-category="Food" data-items="Food,Canned Goods,Produce">
@@ -276,6 +317,7 @@
                 <h3>Food Bank for Monterey County - Marina</h3>
                 <p class="address">Marina, CA</p>
                 <p>Food distribution support for local families and individuals.</p>
+                <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Marina+CA+Food+Bank+for+Monterey+County">Open in Maps</a>
             </div>
 
             <div class="resource-card" data-category="Food" data-items="Food,Produce,Canned Goods">
@@ -285,6 +327,7 @@
                 <h3>Food Bank for Monterey County - Seaside</h3>
                 <p class="address">Seaside, CA</p>
                 <p>Community food assistance and pantry support near CSUMB.</p>
+                <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Seaside+CA+Food+Bank+for+Monterey+County">Open in Maps</a>
             </div>
 
             <div class="resource-card" data-category="Shelter" data-items="Food,Clothes,Hygiene">
@@ -294,6 +337,7 @@
                 <h3>Salvation Army Monterey Peninsula Corps</h3>
                 <p class="address">Seaside, CA</p>
                 <p>Provides food support, basic aid, and shelter-related assistance.</p>
+                <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Salvation+Army+Monterey+Peninsula+Corps+Seaside+CA">Open in Maps</a>
             </div>
 
             <div class="resource-card" data-category="Donations" data-items="Clothes,Household Items">
@@ -303,6 +347,7 @@
                 <h3>Goodwill Donation Center</h3>
                 <p class="address">Monterey, CA</p>
                 <p>Accepts clothing and household donations for community reuse.</p>
+                <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Goodwill+Donation+Center+Monterey+CA">Open in Maps</a>
             </div>
         </section>
     </main>

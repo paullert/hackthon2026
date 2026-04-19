@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Community Help Exchange</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f8fc;
+            color: #1f2937;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #38bdf8);
+            color: white;
+            padding: 56px 20px;
+        }
+
+        .hero-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .mini-title {
+            margin: 0 0 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            opacity: 0.95;
+        }
+
+        .hero h1 {
+            margin: 0 0 12px;
+            font-size: 3rem;
+        }
+
+        .subtitle {
+            margin: 0;
+            font-size: 1.1rem;
+            max-width: 700px;
+            line-height: 1.5;
+        }
+
+        .nav-row {
+            margin-top: 22px;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background: white;
+            color: #1d4ed8;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 24px 16px 40px;
+        }
+
+        .section-card {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .section-card h2 {
+            margin-top: 0;
+            color: #1d4ed8;
+        }
+
+        .section-card p {
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .photo-box {
+            background: #e0f2fe;
+            border: 2px dashed #38bdf8;
+            border-radius: 16px;
+            min-height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 18px;
+            color: #0369a1;
+            font-weight: bold;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .member-card {
+            background: #eef4ff;
+            padding: 18px;
+            border-radius: 14px;
+            border-top: 5px solid #2563eb;
+        }
+
+        .member-card h3 {
+            margin: 0 0 8px;
+            color: #1f2937;
+        }
+
+        .member-card p {
+            margin: 0;
+        }
+
+        .highlight-box {
+            background: #eef2ff;
+            border-left: 5px solid #4f46e5;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 14px;
+            color: #374151;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+            <p class="mini-title">Meet the Team</p>
+            <h1>About Us</h1>
+            <p class="subtitle">
+                Learn more about our team, our project, and why we created Community Help Exchange.
+            </p>
+
+            <div class="nav-row">
+                <a href="/" class="nav-btn">Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="section-card">
+            <div class="about-grid">
+                <div>
+                    <h2>Who We Are</h2>
+                    <p>
+                        We are a hackathon team focused on building a simple and useful tool
+                        that helps people find community resources more easily. Our goal was
+                        to create a website that feels welcoming, easy to use, and helpful
+                        for people looking for food support, shelter help, campus resources,
+                        and donation centers.
+                    </p>
+
+                    <div class="highlight-box">
+                        Our mission is to make support easier to find by organizing local
+                        resources in one simple place.
+                    </div>
+                </div>
+
+                <div class="photo-box">
+                    Add your team photo here
+                    <br><br>
+                    Replace this box with a real image later
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="member-card">
+                    <h3>Your Name</h3>
+                    <p>Describe your role here. For example: design, coding, research, or presentation.</p>
+                </div>
+
+                <div class="member-card">
+                    <h3>Teammate Name</h3>
+                    <p>Describe what this teammate contributed to the web app and project idea.</p>
+                </div>
+
+                <div class="member-card">
+                    <h3>Teammate Name</h3>
+                    <p>Describe their role and what they helped create for the website.</p>
+                </div>
+
+                <div class="member-card">
+                    <h3>Teammate Name</h3>
+                    <p>Add another teammate here if needed, along with their contribution.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Why We Created This Website</h2>
+            <p>
+                We created Community Help Exchange because finding help should not feel confusing
+                or overwhelming. We wanted to make a website that is simple, clear, and practical
+                so users can quickly find resources without wasting time.
+            </p>
+            <p>
+                This project represents our effort to support the community through technology
+                by making important information easier to access.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
