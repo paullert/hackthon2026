@@ -309,3 +309,4 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/webstorm+all,visualstudiocode,windows,macos,node
 
+__pycache__/app.cpython-314.pyc
