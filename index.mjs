@@ -1,18 +1,30 @@
-import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
+import express from 'express';
+import 'dotenv/config';
+import pg from 'pg';
+const {Pool} = pg;
 
 const app = express();
-const PORT = 3000;
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const PORT = process.env.PORT
 
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));
 
+
+// Makes it so that file selection automatically starts in public folder directory
+app.use("/", express.static("public"));
+
+
+const pool = new Pool({
+    connectionString: process.env.NEON_DB_URL
+});
+
+// Routes
+// Home Route
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("home");
+});
+
+app.get("/search", (req, res) => {
+    res.render("search");
 });
 
 app.get("/about", (req, res) => {
